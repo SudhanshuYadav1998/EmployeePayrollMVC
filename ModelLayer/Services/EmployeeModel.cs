@@ -14,6 +14,7 @@ namespace ModelLayer.Services
         public string Gender { get; set; }
         [Required]
         public string Department { get; set; }
+
         [Required]
         public string ProfileImage { get; set; }
         [Required]
