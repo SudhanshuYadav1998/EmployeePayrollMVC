@@ -68,7 +68,7 @@ namespace RepositoryLayer.Services
                     command.Parameters.AddWithValue("@Department", usermodel.Department);
                     command.Parameters.AddWithValue("@Salary", usermodel.Salary);
                     command.Parameters.AddWithValue("@Gender", usermodel.Gender);
-                    command.Parameters.AddWithValue("@StartDate", usermodel.StartDate);
+                    command.Parameters.AddWithValue("@StartDate",usermodel.StartDate);
 
                     var result = command.ExecuteNonQuery();
 

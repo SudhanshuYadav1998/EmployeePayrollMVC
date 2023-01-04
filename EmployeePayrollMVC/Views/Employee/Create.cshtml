@@ -8,52 +8,65 @@
 
 <h4>EmployeeModel</h4>
 <hr />
+<link rel="stylesheet" href="/css/DemoSheet.css" />
+
 <div class="row">
+
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ID" class="control-label"></label>
-                <input asp-for="ID" class="form-control" />
+                <input asp-for="ID" id="txtid" class="form-control" />
                 <span asp-validation-for="ID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
+                <input asp-for="Name" id="txtname" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" />
+                <select asp-for="Gender" id="txtgender" class="form-control">
+                <option>Male</option>
+                <option>Female</option>
+                </select>
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Department" class="control-label"></label>
-                <input asp-for="Department" class="form-control" />
+                <input asp-for="Department" id="txtdepartment" class="form-control" />
                 <span asp-validation-for="Department" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ProfileImage" class="control-label"></label>
-                <input asp-for="ProfileImage" class="form-control" />
+                
+                @Html.RadioButtonFor(model => model.ProfileImage, "~/assets/Male (1).png")
+                <img class="profileimage" src="~/assets/Male (1).png" />
+                @Html.RadioButtonFor(model => model.ProfileImage, "~/assets/Male (2).png")
+                <img class="profileimage" src="~/assets/Male (2).png" />
+                @Html.RadioButtonFor(model => model.ProfileImage, "~/assets/Female (3) .png")
+                <img class="profileimage" src="~/assets/Female (3) .png" />
+                @Html.RadioButtonFor(model => model.ProfileImage, "~/assets/Female (5).png")
+                <img class="profileimage" src="~/assets/Female (5).png" />
                 <span asp-validation-for="ProfileImage" class="text-danger"></span>
-            </div>
+           </div>
             <div class="form-group">
                 <label asp-for="Notes" class="control-label"></label>
-                <input asp-for="Notes" class="form-control" />
+                <input asp-for="Notes" id="txtnotes" class="form-control" />
                 <span asp-validation-for="Notes" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Salary" class="control-label"></label>
-                <input asp-for="Salary" class="form-control" />
+                <input asp-for="Salary" id="txtsalary" class="form-control" />
                 <span asp-validation-for="Salary" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="StartDate" class="control-label"></label>
-                <input asp-for="StartDate" class="form-control" />
+                <input asp-for="StartDate" id="txtsd" class="form-control" />
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" id="btnmodel" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>

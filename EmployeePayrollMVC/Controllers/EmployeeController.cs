@@ -21,6 +21,14 @@ namespace EmployeePayrollMVC.Controllers
 
             return View(lstEmployee);
         }
+
+        public IActionResult Indexnew()
+        {
+            List<EmployeeModel> lstEmployee = new List<EmployeeModel>();
+            lstEmployee = empRegBL.GetAllEmployees().ToList();
+
+            return View(lstEmployee);
+        }
         [HttpGet]
         public IActionResult Create()
         {
@@ -36,6 +44,13 @@ namespace EmployeePayrollMVC.Controllers
                 return RedirectToAction("Index");
             }
             return View(employee);
+        }
+        [HttpPost]
+
+        public JsonResult Createjson(EmployeeModel employee)
+        {
+            empRegBL.AddEmployee(employee);
+            return Json(employee);
         }
         [HttpGet]
         public IActionResult Edit(int? id)
@@ -81,6 +96,13 @@ namespace EmployeePayrollMVC.Controllers
                 return NotFound();
             }
             return View(employee);
+        }
+        public JsonResult GetAll()
+        {
+            List<EmployeeModel> lstEmployee = new List<EmployeeModel>();
+            lstEmployee = empRegBL.GetAllEmployees().ToList();
+
+            return Json(lstEmployee);
         }
         [HttpGet]
         public IActionResult Delete(int? id)
