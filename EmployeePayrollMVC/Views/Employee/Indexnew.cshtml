@@ -39,7 +39,7 @@
     function clearall(){
         $('#txtid').val('');
         $('#txtname').val('');
-        $('#txtdesignation').val('');
+        $('#txtdepartment').val('');
         $('#txtgender').val('');
         $('#txtpi').val('');
         $('#txtsalary').val('');
@@ -102,6 +102,7 @@
     }
     function Loademployee() 
     {
+        //debugger
         var empdata = [];
         $.ajax({
             type: 'post',
@@ -114,7 +115,8 @@
                  $.each(data, function (key, value) {
                      empdata.push([
                             value.id, value.name, value.profileImage, value.gender, value.department,
-                            value.salary, value.startDate, value.notes]);
+                            value.salary, value.startDate, value.notes
+                     ]);
                  });
                 }
             },

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Services;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace EmployeePayrollMVC.Controllers
 {
@@ -29,6 +30,8 @@ namespace EmployeePayrollMVC.Controllers
 
             return View(lstEmployee);
         }
+
+
         [HttpGet]
         public IActionResult Create()
         {
@@ -126,5 +129,6 @@ namespace EmployeePayrollMVC.Controllers
             empRegBL.DeleteEmployee(id);
             return RedirectToAction("Index");
         }
+
     }
 }
